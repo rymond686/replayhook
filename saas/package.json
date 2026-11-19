@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
-    "worker": "tsx jobs/worker.ts"
+    "worker": "tsx jobs/worker.ts",
+    "prebuild": "tsx scripts/write-static-public.ts",
+    "predev": "tsx scripts/write-static-public.ts"
   },
   "engines": {
     "node": ">=20"
