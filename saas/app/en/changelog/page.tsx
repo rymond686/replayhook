@@ -18,6 +18,8 @@ export default function ChangelogPage() {
       <h2>0.1.0 — 2026-11-19</h2>
       <h3>Added</h3>
       <ul>
+        <li>Published the public preview on GitHub Pages.</li>
+        <li>Updated the pricing page with planned Free and US$19.90 tiers, callback limits, retention periods, and audit-log information. These backend capabilities are not yet available in the public preview.</li>
         <li>
           Public English site describing ReplayHook as a read-only Stripe payment and order
           reconciliation diagnostic for small SaaS teams.

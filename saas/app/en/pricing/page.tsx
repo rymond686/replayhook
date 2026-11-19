@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { PilotCta } from "@/app/components/PilotCta";
-import { CONTACT_EMAIL, PRICE_RANGE_USD, REFUND_WINDOW } from "@/lib/site";
+import { CONTACT_EMAIL, REFUND_WINDOW } from "@/lib/site";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "ReplayHook paid pilots are priced in the $19–$99 USD range. Refundable within 48 hours of purchase.",
+    "Explore planned ReplayHook Free and US$19.90 plans, callback limits, data retention, and audit logs.",
   alternates: { canonical: "/en/pricing/" },
 };
 
@@ -17,24 +17,39 @@ export default function PricingPage() {
       <AnalyticsBeacon path="/en/pricing/" />
       <AnalyticsBeacon event="pricing_view" path="/en/pricing/" />
       <p className="eyebrow">Pricing</p>
-      <h1>Paid pilot pricing</h1>
+      <h1>Free and paid plans</h1>
       <p className="lede">
-        A ReplayHook paid pilot is priced in the {PRICE_RANGE_USD} range (USD). The exact amount
-        depends on the agreed sample and review scope. This is a price range, not a list of
-        separate pre-defined plans.
+        Choose the planned callback data limits and retention that fit your needs.
+        These plans describe upcoming capabilities, not features available in the current public preview.
       </p>
       <div className="panel">
-        <h2>What the paid pilot includes</h2>
+        <h2>Free — US$0</h2>
         <ul>
-          <li>A read-only reconciliation of agreed Stripe test data or an authorized redacted export</li>
-          <li>A report with matched, missing business processing, and needs-review results, plus evidence</li>
-          <li>A review of the findings with you</li>
+          <li>Callback data retained for 24 hours</li>
+          <li>Limit of 10 callbacks per user</li>
         </ul>
+      </div>
+      <div className="panel">
+        <h2>Paid — US$19.90</h2>
+        <ul>
+          <li>Callback data retained for 30 days</li>
+          <li>Auditable log information</li>
+          <li>Limit of 30 callbacks per user</li>
+        </ul>
+        <p>
+          The billing period, what counts as a callback, and any limit reset period
+          are not yet specified. Confirm these details before purchasing.
+        </p>
         <p>
           Refunds are available within {REFUND_WINDOW} of purchase. See the{" "}
           <Link href="/en/refund/">Refund Policy</Link>.
         </p>
       </div>
+      <p>
+        This static preview does not yet provide customer callback ingestion,
+        retention enforcement, or audit-log storage. Apply below to discuss availability;
+        this page does not take payments.
+      </p>
       <p>
         The public demo and inspector remain free. Questions:{" "}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
