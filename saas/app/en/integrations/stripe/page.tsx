@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { PilotCta } from "@/app/components/PilotCta";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Stripe integration",
@@ -48,8 +49,8 @@ export default function StripeIntegrationPage() {
         <li>You confirm which findings are useful for investigation.</li>
       </ol>
       <p>
-        See a <a href="/en/#demo">synthetic sample report</a> first, or review{" "}
-        <a href="/en/pricing/">pricing</a> and apply for a paid pilot.
+        See a <Link href="/en/#demo">synthetic sample report</Link> first, or review{" "}
+        <Link href="/en/pricing/">pricing</Link> and apply for a paid pilot.
       </p>
       <PilotCta />
     </div>

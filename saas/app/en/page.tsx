@@ -3,6 +3,7 @@ import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { PilotCta } from "@/app/components/PilotCta";
 import { ReconciliationDemo } from "@/app/components/ReconciliationDemo";
 import { CONTACT_EMAIL, JSON_LD, PRICE_RANGE_USD, PRODUCT_NAME } from "@/lib/site";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: `${PRODUCT_NAME} — read-only Stripe payment and order reconciliation`,
@@ -28,9 +29,9 @@ export default function HomePage() {
           <a className="button" href="#demo">
             Run the sample reconciliation
           </a>
-          <a className="button secondary" href="/en/pricing/#apply">
+          <Link className="button secondary" href="/en/pricing/#apply">
             Apply for a paid pilot
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -92,11 +93,11 @@ export default function HomePage() {
         <h2>Free tools and paid pilot</h2>
         <p>
           The homepage demo, the{" "}
-          <a href="/en/tools/stripe-event-inspector/">Stripe event inspector</a>, the{" "}
-          <a href="/en/integrations/stripe/">Stripe integration overview</a>, and the{" "}
-          <a href="/en/guides/stripe-webhook-delivery-failed/">delivery troubleshooting guide</a>{" "}
+          <Link href="/en/tools/stripe-event-inspector/">Stripe event inspector</Link>, the{" "}
+          <Link href="/en/integrations/stripe/">Stripe integration overview</Link>, and the{" "}
+          <Link href="/en/guides/stripe-webhook-delivery-failed/">delivery troubleshooting guide</Link>{" "}
           are free and do not require an account. When you need a reconciliation against your own
-          authorized data, continue to <a href="/en/pricing/">pricing</a> or apply for a paid pilot.
+          authorized data, continue to <Link href="/en/pricing/">pricing</Link> or apply for a paid pilot.
         </p>
         <p>
           Paid pilots are priced in the {PRICE_RANGE_USD} range (USD). Contact{" "}

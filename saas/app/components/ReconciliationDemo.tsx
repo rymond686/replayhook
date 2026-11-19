@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useMemo, useState } from "react";
 import { reconcileIsolated } from "@/billing/reconciliation";
 import { createSyntheticDemoDataset } from "@/billing/synthetic-data";
@@ -101,12 +103,12 @@ export function ReconciliationDemo() {
               </tbody>
             </table>
             <div className="actions">
-              <a className="button" href="/en/pricing/#apply">
+              <Link className="button" href="/en/pricing/#apply">
                 Apply for a paid pilot
-              </a>
-              <a className="button secondary" href="/en/pricing/">
+              </Link>
+              <Link className="button secondary" href="/en/pricing/">
                 See pricing
-              </a>
+              </Link>
             </div>
           </div>
         ) : null}

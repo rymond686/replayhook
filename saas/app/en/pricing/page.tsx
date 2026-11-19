@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { PilotCta } from "@/app/components/PilotCta";
 import { CONTACT_EMAIL, PRICE_RANGE_USD, REFUND_WINDOW } from "@/lib/site";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -31,7 +32,7 @@ export default function PricingPage() {
         </ul>
         <p>
           Refunds are available within {REFUND_WINDOW} of purchase. See the{" "}
-          <a href="/en/refund/">Refund Policy</a>.
+          <Link href="/en/refund/">Refund Policy</Link>.
         </p>
       </div>
       <p>
