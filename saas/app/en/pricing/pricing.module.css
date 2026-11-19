@@ -5,7 +5,9 @@
   margin: 2rem 0;
   align-items: stretch;
 }
-.plan { min-width: 0; padding: 1.5rem; }
+.plan { min-width: 0; padding: 1.5rem; display: flex; flex-direction: column; }
+.action { margin-top: auto; align-self: flex-start; }
+.plan ul { padding-bottom: 1.5rem; }
 .plan h2 { margin: 0 0 1rem; }
 .price { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2; margin: 0; }
 .price span { font-size: 1rem; font-weight: 400; }

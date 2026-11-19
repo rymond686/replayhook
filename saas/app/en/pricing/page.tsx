@@ -19,10 +19,6 @@ export default function PricingPage() {
       <AnalyticsBeacon event="pricing_view" path="/en/pricing/" />
       <p className="eyebrow">Pricing</p>
       <h1>Free and paid plans</h1>
-      <p className="lede">
-        Choose the planned callback data limits and retention that fit your needs.
-        These plans describe upcoming capabilities, not features available in the current public preview.
-      </p>
       <div className={styles.plans}>
         <section className={`panel ${styles.plan}`} aria-labelledby="free-plan">
           <h2 id="free-plan">Free</h2>
@@ -32,6 +28,7 @@ export default function PricingPage() {
             <li>Callback data retained for 24 hours</li>
             <li>Limit of 10 callbacks per user</li>
           </ul>
+          <Link className={`button secondary ${styles.action}`} href="/en/#demo">Try the free demo</Link>
         </section>
         <section className={`panel ${styles.plan} ${styles.paid}`} aria-labelledby="paid-plan">
           <h2 id="paid-plan">Paid</h2>
@@ -42,8 +39,13 @@ export default function PricingPage() {
             <li>Auditable log information</li>
             <li>Limit of 30 callbacks per user</li>
           </ul>
+          <a className={`button ${styles.action}`} href="#apply">Apply for a paid pilot</a>
         </section>
       </div>
+      <p className="lede">
+        Choose the planned callback data limits and retention that fit your needs.
+        These plans describe upcoming capabilities, not features available in the current public preview.
+      </p>
         <p>
           What counts as a callback and any limit reset period are not yet specified.
           Monthly billing does not imply that callback limits reset each month. Confirm these details before purchasing.
