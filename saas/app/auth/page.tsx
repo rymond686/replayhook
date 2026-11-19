@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Sign in",
@@ -11,7 +12,7 @@ export default function AuthPlaceholderPage() {
       <h1>Sign in</h1>
       <p>
         Authentication is reserved for a later phase. The public demo does not require sign-in.{" "}
-        <a href="/en/">Return to the public site</a>.
+        <Link href="/en/">Return to the public site</Link>.
       </p>
     </main>
   );
