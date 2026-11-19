@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Next.js
+saas/.next/
+saas/out/
+saas/.vercel/
+saas/tsconfig.tsbuildinfo
+
+# Tests and OS
+coverage/
+.DS_Store
+*.log
+.npm
