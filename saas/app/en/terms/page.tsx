@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { CONTACT_EMAIL, PRICE_RANGE_USD, PRODUCT_NAME, REFUND_WINDOW } from "@/lib/site";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -35,7 +36,7 @@ export default function TermsPage() {
       <p>
         Paid pilots are priced in the {PRICE_RANGE_USD} range (USD). The exact amount, sample
         scope, and delivery window are agreed in writing before work starts. Refunds are described
-        in the <a href="/en/refund/">Refund Policy</a> and are available within {REFUND_WINDOW} of
+        in the <Link href="/en/refund/">Refund Policy</Link> and are available within {REFUND_WINDOW} of
         purchase.
       </p>
       <h2>Your responsibilities</h2>

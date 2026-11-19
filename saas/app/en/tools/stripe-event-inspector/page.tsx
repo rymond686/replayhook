@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { EventInspector } from "@/app/components/EventInspector";
 import { PilotCta } from "@/app/components/PilotCta";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Stripe event inspector",
@@ -27,9 +28,9 @@ export default function InspectorPage() {
         <p>
           A succeeded PaymentIntent or Charge is useful for reconciliation only if an agreed
           identifier is present. After you inspect a sample, see the{" "}
-          <a href="/en/guides/stripe-webhook-delivery-failed/">delivery troubleshooting guide</a>{" "}
+          <Link href="/en/guides/stripe-webhook-delivery-failed/">delivery troubleshooting guide</Link>{" "}
           to distinguish Stripe delivery from downstream order processing, or start a{" "}
-          <a href="/en/pricing/">paid pilot</a> if you need a report against authorized data.
+          <Link href="/en/pricing/">paid pilot</Link> if you need a report against authorized data.
         </p>
       </section>
       <PilotCta heading="Need this check on your authorized data?" />

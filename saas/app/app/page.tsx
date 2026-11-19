@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "App",
@@ -11,7 +12,7 @@ export default function AppPlaceholderPage() {
       <h1>Application console</h1>
       <p>
         Signed-in workspace tools are not available in this phase.{" "}
-        <a href="/en/">Return to the public site</a>.
+        <Link href="/en/">Return to the public site</Link>.
       </p>
     </main>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { PilotCta } from "@/app/components/PilotCta";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Troubleshoot a failed Stripe webhook delivery",
@@ -61,10 +62,10 @@ export default function GuidePage() {
         review.
       </p>
       <p>
-        Run the <a href="/en/#demo">sample reconciliation</a> or the{" "}
-        <a href="/en/tools/stripe-event-inspector/">event inspector</a> to see these fields
+        Run the <Link href="/en/#demo">sample reconciliation</Link> or the{" "}
+        <Link href="/en/tools/stripe-event-inspector/">event inspector</Link> to see these fields
         without logging in. If you need the same check on authorized data, see{" "}
-        <a href="/en/pricing/">pricing</a> and apply for a paid pilot.
+        <Link href="/en/pricing/">pricing</Link> and apply for a paid pilot.
       </p>
       <PilotCta />
     </div>
