@@ -39,7 +39,7 @@ Open [http://localhost:3000/en/](http://localhost:3000/en/). The worker process,
 
 ### Environment variables
 
-See `.env.example`. Leave `SUPABASE_URL` and `SUPABASE_ANON_KEY` unset to run the in-repo synthetic demo. The GitHub Pages preview uses `NEXT_PUBLIC_SITE_URL=https://rymond686.github.io/replayhook` and `NEXT_PUBLIC_BASE_PATH=/replayhook`. Local development leaves these unset so the site is served at `http://localhost:3000/en/`. GitHub Pages has no server API, so first-party analytics events are recorded in the browser session; optional Supabase persistence is used only when a later server host is configured.
+See `.env.example`. Leave `SUPABASE_URL` and `SUPABASE_ANON_KEY` unset to run the in-repo synthetic demo. The GitHub Pages preview uses `NEXT_PUBLIC_SITE_URL=https://rymond686.github.io/replayhook` and `NEXT_PUBLIC_BASE_PATH=/replayhook`. Local development leaves these unset so the site is served at `http://localhost:3000/en/`. The GitHub Pages preview posts sanitized first-party analytics events to a Supabase Edge Function collector (`NEXT_PUBLIC_ANALYTICS_ENDPOINT`). A browser session record is only a local aid and is not treated as collection success. The optional `server/optional-api/track` route is not deployed on Pages; if used on a later Node host, it returns success only after the event is persisted and fails when credentials are missing.
 
 ## Repository layout
 
@@ -51,6 +51,7 @@ saas/
 ├── migrations/    # PostgreSQL / Supabase schema
 ├── public/        # public static files
 └── tests/         # core delivery, tenant isolation, and read-only tests
+supabase/functions/track/  # public GitHub Pages analytics collector
 ```
 
 ## Contact
