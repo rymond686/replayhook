@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
-import { CONTACT_EMAIL, PRICE_RANGE_USD, PRODUCT_NAME, REFUND_WINDOW } from "@/lib/site";
+import { CONTACT_EMAIL, PAID_PLAN_PRICE_USD, PRODUCT_NAME, REFUND_WINDOW } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
@@ -15,14 +15,14 @@ export default function RefundPage() {
       <h1>Refund Policy</h1>
       <p className="muted">Last updated: 19 November 2026 (Asia/Shanghai).</p>
       <p>
-        Paid {PRODUCT_NAME} pilots are priced in the {PRICE_RANGE_USD} range (USD). You may request
+        The planned paid {PRODUCT_NAME} subscription costs {PAID_PLAN_PRICE_USD}, billed monthly. You may request
         a refund within {REFUND_WINDOW} of purchase by emailing{" "}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from the address used in the
         purchase or application and including the purchase date and any payment reference you
         have.
       </p>
       <p>
-        We will confirm the request and refund the amount you paid for that pilot through the same
+        We will confirm the request and refund the eligible purchase amount through the same
         payment channel when possible. After {REFUND_WINDOW}, refunds are considered only where
         required by applicable consumer law or by the payment provider’s rules. This policy does
         not limit rights that cannot be excluded under applicable law.

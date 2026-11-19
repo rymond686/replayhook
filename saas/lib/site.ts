@@ -1,6 +1,6 @@
 export const PRODUCT_NAME = "ReplayHook";
 export const CONTACT_EMAIL = "lovelycat8528@gmail.com";
-export const PRICE_RANGE_USD = "$19–$99";
+export const PAID_PLAN_PRICE_USD = "US$19.90/month";
 export const REFUND_WINDOW = "48 hours";
 
 export function getSiteUrl(): string {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { PilotCta } from "@/app/components/PilotCta";
 import { ReconciliationDemo } from "@/app/components/ReconciliationDemo";
-import { CONTACT_EMAIL, JSON_LD, PRICE_RANGE_USD, PRODUCT_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, JSON_LD, PAID_PLAN_PRICE_USD, PRODUCT_NAME } from "@/lib/site";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -100,7 +100,7 @@ export default function HomePage() {
           authorized data, continue to <Link href="/en/pricing/">pricing</Link> or apply for a paid pilot.
         </p>
         <p>
-          Paid pilots are priced in the {PRICE_RANGE_USD} range (USD). Contact{" "}
+          The planned paid plan is a monthly subscription at {PAID_PLAN_PRICE_USD}. Contact{" "}
           <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
         </p>
       </section>

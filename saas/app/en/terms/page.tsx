@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AnalyticsBeacon } from "@/app/components/Analytics";
-import { CONTACT_EMAIL, PRICE_RANGE_USD, PRODUCT_NAME, REFUND_WINDOW } from "@/lib/site";
+import { CONTACT_EMAIL, PAID_PLAN_PRICE_USD, PRODUCT_NAME, REFUND_WINDOW } from "@/lib/site";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -34,8 +34,9 @@ export default function TermsPage() {
       </p>
       <h2>Pilots, pricing, and payment</h2>
       <p>
-        Paid pilots are priced in the {PRICE_RANGE_USD} range (USD). The exact amount, sample
-        scope, and delivery window are agreed in writing before work starts. Refunds are described
+        The planned paid plan is a monthly subscription at {PAID_PLAN_PRICE_USD}.
+        The Free plan costs US$0. Callback counting and limit reset periods remain to be confirmed.
+        These plans are not yet available in this static preview. Refunds are described
         in the <Link href="/en/refund/">Refund Policy</Link> and are available within {REFUND_WINDOW} of
         purchase.
       </p>
