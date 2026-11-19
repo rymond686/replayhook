@@ -7,7 +7,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Explore planned ReplayHook Free and US$19.90 plans, callback limits, data retention, and audit logs.",
+    "Explore planned ReplayHook Free and US$19.90/month subscription plans, callback limits, data retention, and audit logs.",
   alternates: { canonical: "/en/pricing/" },
 };
 
@@ -30,15 +30,16 @@ export default function PricingPage() {
         </ul>
       </div>
       <div className="panel">
-        <h2>Paid — US$19.90</h2>
+        <h2>Paid — US$19.90/month</h2>
         <ul>
+          <li>Monthly subscription</li>
           <li>Callback data retained for 30 days</li>
           <li>Auditable log information</li>
           <li>Limit of 30 callbacks per user</li>
         </ul>
         <p>
-          The billing period, what counts as a callback, and any limit reset period
-          are not yet specified. Confirm these details before purchasing.
+          What counts as a callback and any limit reset period are not yet specified.
+          Monthly billing does not imply that callback limits reset each month. Confirm these details before purchasing.
         </p>
         <p>
           Refunds are available within {REFUND_WINDOW} of purchase. See the{" "}
