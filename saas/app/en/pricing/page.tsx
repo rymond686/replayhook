@@ -3,6 +3,7 @@ import { AnalyticsBeacon } from "@/app/components/Analytics";
 import { PilotCta } from "@/app/components/PilotCta";
 import { CONTACT_EMAIL, REFUND_WINDOW } from "@/lib/site";
 import Link from "next/link";
+import styles from "./pricing.module.css";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -22,21 +23,27 @@ export default function PricingPage() {
         Choose the planned callback data limits and retention that fit your needs.
         These plans describe upcoming capabilities, not features available in the current public preview.
       </p>
-      <div className="panel">
-        <h2>Free — US$0</h2>
-        <ul>
-          <li>Callback data retained for 24 hours</li>
-          <li>Limit of 10 callbacks per user</li>
-        </ul>
+      <div className={styles.plans}>
+        <section className={`panel ${styles.plan}`} aria-labelledby="free-plan">
+          <h2 id="free-plan">Free</h2>
+          <p className={styles.price}>US$0</p>
+          <p className={`muted ${styles.period}`}>Free plan</p>
+          <ul>
+            <li>Callback data retained for 24 hours</li>
+            <li>Limit of 10 callbacks per user</li>
+          </ul>
+        </section>
+        <section className={`panel ${styles.plan} ${styles.paid}`} aria-labelledby="paid-plan">
+          <h2 id="paid-plan">Paid</h2>
+          <p className={styles.price}>US$19.90<span>/month</span></p>
+          <p className={`muted ${styles.period}`}>Monthly subscription</p>
+          <ul>
+            <li>Callback data retained for 30 days</li>
+            <li>Auditable log information</li>
+            <li>Limit of 30 callbacks per user</li>
+          </ul>
+        </section>
       </div>
-      <div className="panel">
-        <h2>Paid — US$19.90/month</h2>
-        <ul>
-          <li>Monthly subscription</li>
-          <li>Callback data retained for 30 days</li>
-          <li>Auditable log information</li>
-          <li>Limit of 30 callbacks per user</li>
-        </ul>
         <p>
           What counts as a callback and any limit reset period are not yet specified.
           Monthly billing does not imply that callback limits reset each month. Confirm these details before purchasing.
@@ -45,7 +52,6 @@ export default function PricingPage() {
           Refunds are available within {REFUND_WINDOW} of purchase. See the{" "}
           <Link href="/en/refund/">Refund Policy</Link>.
         </p>
-      </div>
       <p>
         This static preview does not yet provide customer callback ingestion,
         retention enforcement, or audit-log storage. Apply below to discuss availability;
