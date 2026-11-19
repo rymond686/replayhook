@@ -27,6 +27,7 @@ jobs:
       GITHUB_PAGES: "true"
       NEXT_PUBLIC_BASE_PATH: /replayhook
       NEXT_PUBLIC_SITE_URL: https://rymond686.github.io/replayhook
+      NEXT_PUBLIC_ANALYTICS_ENDPOINT: https://etvtfqpuonhlfhzyqqyf.supabase.co/functions/v1/track
     steps:
       - name: Checkout
         uses: actions/checkout@v4

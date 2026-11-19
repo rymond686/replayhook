@@ -1,7 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import { resolveSource, sanitizeAnalyticsEvent, type AnalyticsEventName } from "@/lib/analytics";
+import {
+  getAnalyticsCollectorUrl,
+  getAnalyticsPublishableKey,
+  resolveSource,
+  sanitizeAnalyticsEvent,
+  submitAnalyticsEvent,
+  type AnalyticsEventName,
+} from "@/lib/analytics";
 
 const SOURCE_KEY = "replayhook_source";
 const EVENTS_KEY = "replayhook_events";
@@ -51,7 +58,7 @@ function recordLocally(event: { event: AnalyticsEventName; path: string; source:
     window.sessionStorage.setItem(EVENTS_KEY, JSON.stringify(list));
     (window as typeof window & { __REPLAYHOOK_EVENTS?: unknown }).__REPLAYHOOK_EVENTS = list;
   } catch {
-    // sessionStorage may be unavailable; the event still attempted a network handoff below.
+    // sessionStorage may be unavailable. A local record is never collection success.
   }
 }
 
@@ -63,20 +70,17 @@ export async function track(event: AnalyticsEventName, path?: string): Promise<v
     path: path ?? sitePathFromLocation(),
     source,
   };
+  // Local session history is only for in-page inspection. It is not proof of collection.
   recordLocally(payload);
 
-  const base = getBasePath();
-  try {
-    await fetch(`${base}/api/track/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-      keepalive: true,
-    });
-  } catch {
-    // GitHub Pages and other static hosts have no API route. The event is already
-    // recorded first-party in this browser session.
+  const endpoint = getAnalyticsCollectorUrl();
+  const headers: Record<string, string> = {};
+  const publishableKey = getAnalyticsPublishableKey();
+  if (publishableKey) {
+    headers.apikey = publishableKey;
+    headers.Authorization = `Bearer ${publishableKey}`;
   }
+  await submitAnalyticsEvent(payload, { endpoint, headers });
 }
 
 export function AnalyticsBeacon({
